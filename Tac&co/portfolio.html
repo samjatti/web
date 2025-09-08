@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - TAC & Co | Digital Marketing Agency</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./pictures/tac-logo.png" type="image/p   < main>
+        <!-- Portfolio Hero Section -->
+        <section class="portfolio-section relative min-h-[40vh] flex items-center justify-center py-24 px-4 md:px-8 overflow-hidden">
+            <div id="particles-js"></div>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Chatbot CSS -->
+    <link rel="stylesheet" href="styles/chatbot.css">
+    
+    <!-- Particle.js and Lottie -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="service-details-new.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/hero.css">
+
+    <!-- Custom Styles -->
+    <style>
+        /* Page Layout */
+        html {
+            height: 100%;
+        }
+        
+        body {
+            min-height: 100%;
+            margin: 0;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            background-color: #0a0a0a;
+        }
+
+        main {
+            flex: 1 0 auto;
+            padding-bottom: 2rem;
+        }
+
+        footer {
+            flex-shrink: 0;
+        }
+
+        /* Portfolio Section Styles */
+        .portfolio-section {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 10px;
+            min-height: calc(100vh - 64px - 300px); /* Subtract header and footer heights */
+        }
+        
+        .portfolio-item {
+            cursor: pointer;
+        }
+        
+        .view-project-btn {
+            cursor: pointer;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-section {
+                padding: 40px 20px;
+            }
+        }
+
+        .portfolio-item {
+            background: #1a1a1a;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            width: 100%;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        @media (min-width: 640px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                padding: 20px;
+            }
+        }
+
+        .portfolio-category {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-item-content {
+            position: relative;
+            z-index: 1;
+            padding: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-item-content {
+                padding: 1.5rem;
+            }
+        }
+
+        .view-project-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: #FFD700;
+            color: black;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .view-project-btn {
+                width: auto;
+                margin-top: 0;
+            }
+        }
+
+        .view-project-btn i {
+            margin-left: 8px;
+        }
+
+        .portfolio-item .relative {
+            height: 200px !important;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-item .relative {
+                height: 250px !important;
+            }
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .section-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Category filters responsive */
+        .portfolio-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        @media (min-width: 768px) {
+            .portfolio-categories {
+                gap: 15px;
+                margin-bottom: 30px;
+                padding: 0;
+            }
+        }
+    </style>
+    </style>
+</head>
+<body class="bg-black text-white">
+    <style>
+        /* Page Layout */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            background-color: #0a0a0a;
+        }
+
+        main {
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            flex-shrink: 0;
+            width: 100%;
+            background-color: #000;
+            margin-top: auto;
+        }
+
+        .page-content {
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <!-- Modern Mobile Navigation (Full Screen Overlay) -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html"><span class="nav-icon"><i class="fas fa-home"></i></span> Home</a>
+        <a href="index.html#services"><span class="nav-icon"><i class="fas fa-cogs"></i></span> Services</a>
+        <a href="index.html#about"><span class="nav-icon"><i class="fas fa-info-circle"></i></span> About Us</a>
+        <a href="portfolio.html"><span class="nav-icon"><i class="fas fa-briefcase"></i></span> Portfolio</a>
+        <a href="index.html#contact"><span class="nav-icon"><i class="fas fa-envelope"></i></span> Contact</a>
+        <button id="closeMobileNav" class="mt-8 px-4 py-2 bg-gold text-black rounded-md hover:bg-yellow-500 transition-colors duration-300">
+            Close
+        </button>
+    </nav>
+
+    <!-- Header -->
+    <header class="w-full bg-black shadow-lg h-16 sm:h-20 md:h-16 sticky top-0 z-50">
+        <nav class="section-content flex justify-between items-center h-full px-4 md:px-6">
+            <a href="index.html" class="logo-link">
+                <span class="logo-corner top-left hidden md:block"></span>
+                <span class="logo-corner top-right hidden md:block"></span>
+                <img src="pictures/tac-logo.png" alt="TAC & CO. Logo" class="h-10 sm:h-12 md:h-14 w-auto logo-modern-effect">
+                <span class="logo-corner bottom-left hidden md:block"></span>
+                <span class="logo-corner bottom-right hidden md:block"></span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="openMobileNav" class="block md:hidden p-2 text-white hover:text-gold transition-colors" title="Menu">
+                <i class="fas fa-bars text-2xl sm:text-3xl"></i>
+            </button>
+            
+            <!-- Desktop Navigation -->
+            <div id="desktop-nav" class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-white hover:text-gold transition duration-300 font-bold flex items-center">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                <div class="relative group">
+                    <a href="index.html#services" class="text-white hover:text-gold transition duration-300 font-bold">Services <i class="fas fa-chevron-down text-xs"></i></a>
+                    <div class="absolute hidden group-hover:block bg-black shadow-lg mt-2 rounded-md">
+                        <a href="service-details.html?service=branding" class="block px-4 py-2 text-white hover:text-gold transition duration-300">Branding</a>
+                        <a href="service-details.html?service=seo-content-strategy" class="block px-4 py-2 text-white hover:text-gold transition duration-300">SEO & Content Strategy</a>
+                        <a href="service-details.html?service=content-creation-ugc" class="block px-4 py-2 text-white hover:text-gold transition duration-300">Content Creation & UGC</a>
+                        <a href="service-details.html?service=photography-cinematography" class="block px-4 py-2 text-white hover:text-gold transition duration-300">Photography & Cinematography</a>
+                        <a href="service-details.html?service=music-audio-production" class="block px-4 py-2 text-white hover:text-gold transition duration-300">Music & Audio Production</a>
+                        <a href="service-details.html?service=podcast" class="block px-4 py-2 text-white hover:text-gold transition duration-300">Podcast</a>
+                        <a href="service-details.html?service=email-marketing" class="block px-4 py-2 text-white hover:text-gold transition duration-300">E-mail, WhatsApp & SMS Marketing</a>
+                        <a href="service-details.html?service=web-app-development" class="block px-4 py-2 text-white hover:text-gold transition duration-300">Web & App Development</a>
+                        <a href="service-details.html?service=social-media-marketing" class="block px-4 py-2 text-white hover:text-gold transition duration-300">Social Media Marketing</a>
+                        <a href="service-details.html?service=ai-automation" class="block px-4 py-2 text-white hover:text-gold transition duration-300">AI Automation</a>
+                    </div>
+                </div>
+                <a href="index.html#about" class="text-white hover:text-gold transition duration-300 font-bold">About Us</a>
+                <a href="portfolio.html" class="text-white hover:text-gold transition duration-300 font-bold">Portfolio</a>
+                <a href="index.html#contact" class="text-white hover:text-gold transition duration-300 font-bold">Contact</a>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobileNav" class="fixed top-0 right-0 w-[80%] h-full bg-black transform translate-x-full transition-transform duration-300 ease-in-out z-50 overflow-y-auto">
+                <div class="flex justify-between items-center p-4 border-b border-gray-800">
+                    <img src="pictures/tac-logo.png" alt="TAC & CO. Logo" class="h-10">
+                    <button id="closeMobileNav" class="text-white hover:text-gold">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <div class="p-4">
+                    <a href="index.html" class="block py-3 text-white hover:text-gold transition duration-300 border-b border-gray-800">
+                        <i class="fas fa-home mr-2"></i> Home
+                    </a>
+                    <div class="mobile-services py-3 border-b border-gray-800">
+                        <button class="flex justify-between items-center w-full text-white hover:text-gold transition duration-300" onclick="toggleMobileServices()">
+                            <span><i class="fas fa-cogs mr-2"></i> Services</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div id="mobileServicesDropdown" class="hidden mt-2 ml-4">
+                            <a href="service-details.html?service=branding" class="block py-2 text-white hover:text-gold">Branding</a>
+                            <a href="service-details.html?service=seo-content-strategy" class="block py-2 text-white hover:text-gold">SEO & Content Strategy</a>
+                            <a href="service-details.html?service=content-creation-ugc" class="block py-2 text-white hover:text-gold">Content Creation & UGC</a>
+                            <a href="service-details.html?service=photography-cinematography" class="block py-2 text-white hover:text-gold">Photography & Cinematography</a>
+                            <a href="service-details.html?service=music-audio-production" class="block py-2 text-white hover:text-gold">Music & Audio Production</a>
+                            <a href="service-details.html?service=podcast" class="block py-2 text-white hover:text-gold">Podcast</a>
+                            <a href="service-details.html?service=email-marketing" class="block py-2 text-white hover:text-gold">Email Marketing</a>
+                            <a href="service-details.html?service=web-app-development" class="block py-2 text-white hover:text-gold">Web Development</a>
+                            <a href="service-details.html?service=social-media-marketing" class="block py-2 text-white hover:text-gold">Social Media Marketing</a>
+                            <a href="service-details.html?service=ai-automation" class="block py-2 text-white hover:text-gold">AI Automation</a>
+                        </div>
+                    </div>
+                    <a href="index.html#about" class="block py-3 text-white hover:text-gold transition duration-300 border-b border-gray-800">
+                        <i class="fas fa-info-circle mr-2"></i> About Us
+                    </a>
+                    <a href="portfolio.html" class="block py-3 text-white hover:text-gold transition duration-300 border-b border-gray-800">
+                        <i class="fas fa-briefcase mr-2"></i> Portfolio
+                    </a>
+                    <a href="index.html#contact" class="block py-3 text-white hover:text-gold transition duration-300 border-b border-gray-800">
+                        <i class="fas fa-envelope mr-2"></i> Contact
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Back to Home Button -->
+        <a href="index.html" class="back-btn" style="display:inline-block;margin:24px 0 0 24px;padding:10px 22px;background:#222;color:#fff;border-radius:30px;text-decoration:none;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:background 0.2s;">
+            <i class="fas fa-arrow-left" style="margin-right:8px;"></i>Back to Home
+        </a>
+
+    <main class="page-content">
+        <!-- Portfolio Hero Section -->
+        <section class="portfolio-section relative min-h-[40vh] flex items-center justify-center py-24 px-4 md:px-8 overflow-hidden">
+            <div id="particles-js"></div>
+            <div class="section-content container mx-auto max-w-7xl text-center">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 section-fade-in" style="background: linear-gradient(45deg, #FFD700, #FFA500); -webkit-background-clip: text; background-clip: text; color: transparent;">
+                    Our Creative Portfolio
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 section-fade-in">
+                    Explore our showcase of innovative solutions and creative excellence that drive real results for our clients.
+                </p>
+                
+                <!-- Portfolio Categories -->
+                <div class="flex flex-wrap justify-center gap-4 mb-16 section-fade-in">
+                    <button class="portfolio-category active px-6 py-3 text-base md:text-lg font-medium" data-category="all">
+                        All Projects
+                    </button>
+                    <button class="portfolio-category px-6 py-3 text-base md:text-lg font-medium" data-category="branding">
+                        Branding
+                    </button>
+                    <button class="portfolio-category px-6 py-3 text-base md:text-lg font-medium" data-category="web">
+                        Web Development
+                    </button>
+                    <button class="portfolio-category px-6 py-3 text-base md:text-lg font-medium" data-category="social">
+                        Social Media
+                    </button>
+                    <button class="portfolio-category px-6 py-3 text-base md:text-lg font-medium" data-category="content">
+                        Content Creation
+                    </button>
+                    <button class="portfolio-category px-6 py-3 text-base md:text-lg font-medium" data-category="video">
+                        Video Production
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid Section -->
+        <section class="portfolio-section py-20 px-4 md:px-8">
+        <div class="container mx-auto max-w-7xl section-fade-in">
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Main showcase items -->
+                <div class="portfolio-item rounded-xl overflow-hidden" data-category="branding">
+                    <div class="relative h-[300px]">
+                        <img src="pictures/tac-portfolio-1.jpg" alt="Brand Identity Design" class="w-full h-full object-cover">
+                    </div>
+                    <div class="portfolio-item-content">
+                        <span class="inline-block px-3 py-1 bg-[rgba(255,215,0,0.1)] text-gold text-sm rounded-full mb-4">Branding</span>
+                        <h3 class="text-2xl font-bold mb-3">Brand Identity Design</h3>
+                        <p class="text-gray-300 mb-6">Complete brand identity redesign for a tech startup, including logo, color palette, and brand guidelines.</p>
+                        <a href="#" class="view-project-btn">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item rounded-xl overflow-hidden" data-category="web">
+                    <div class="relative h-[300px]">
+                        <img src="pictures/web-and-app.jpg" alt="Web Development Project" class="w-full h-full object-cover">
+                    </div>
+                    <div class="portfolio-item-content">
+                        <span class="inline-block px-3 py-1 bg-[rgba(255,215,0,0.1)] text-gold text-sm rounded-full mb-4">Web Development</span>
+                        <h3 class="text-2xl font-bold mb-3">Web Development</h3>
+                        <p class="text-gray-300 mb-6">Modern web applications with advanced features, optimized for performance and user experience.</p>
+                        <a href="#" class="view-project-btn">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item rounded-xl overflow-hidden" data-category="social">
+                    <div class="relative h-[300px]">
+                        <img src="pictures/social-media.jpg" alt="Social Media Campaign" class="w-full h-full object-cover">
+                    </div>
+                    <div class="portfolio-item-content">
+                        <span class="inline-block px-3 py-1 bg-[rgba(255,215,0,0.1)] text-gold text-sm rounded-full mb-4">Social Media</span>
+                        <h3 class="text-2xl font-bold mb-3">Social Media Campaign</h3>
+                        <p class="text-gray-300 mb-6">Engaging social media strategy that increased brand awareness and engagement.</p>
+                        <a href="#" class="view-project-btn">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item rounded-xl overflow-hidden" data-category="content">
+                    <div class="relative h-[300px]">
+                        <img src="pictures/content-creation-ugc.jpg" alt="Content Creation" class="w-full h-full object-cover">
+                    </div>
+                    <div class="portfolio-item-content">
+                        <span class="inline-block px-3 py-1 bg-[rgba(255,215,0,0.1)] text-gold text-sm rounded-full mb-4">Content Creation</span>
+                        <h3 class="text-2xl font-bold mb-3">Content Strategy</h3>
+                        <p class="text-gray-300 mb-6">Strategic content creation and UGC campaigns that drive engagement.</p>
+                        <a href="#" class="view-project-btn">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item rounded-xl overflow-hidden" data-category="email">
+                    <div class="relative h-[300px]">
+                        <img src="pictures/email-marketing.jpg" alt="Email Marketing" class="w-full h-full object-cover">
+                    </div>
+                    <div class="portfolio-item-content">
+                        <span class="inline-block px-3 py-1 bg-[rgba(255,215,0,0.1)] text-gold text-sm rounded-full mb-4">Email Marketing</span>
+                        <h3 class="text-2xl font-bold mb-3">Email Campaigns</h3>
+                        <p class="text-gray-300 mb-6">Results-driven email marketing campaigns that convert.</p>
+                        <a href="#" class="view-project-btn">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item rounded-xl overflow-hidden" data-category="video">
+                    <div class="relative h-[300px]">
+                        <img src="pictures/photo-cinematography.jpg" alt="Photography & Cinematography" class="w-full h-full object-cover">
+                    </div>
+                    <div class="portfolio-item-content">
+                        <span class="inline-block px-3 py-1 bg-[rgba(255,215,0,0.1)] text-gold text-sm rounded-full mb-4">Photography & Video</span>
+                        <h3 class="text-2xl font-bold mb-3">Visual Production</h3>
+                        <p class="text-gray-300 mb-6">Professional photography and cinematography services.</p>
+                        <a href="#" class="view-project-btn">
+                            View Project <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-300 pt-10 pb-6 border-t border-gray-800 w-full mt-auto">
+        <div class="container mx-auto px-4 max-w-[1440px]">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 text-center md:text-left">
+                <!-- Column 1: About & Logo -->
+                <div class="space-y-3 flex flex-col items-center md:items-start">
+                    <a href="index.html"><img src="pictures/tac-logo.png" alt="TAC & CO. Logo" class="h-16 w-auto mb-2"></a>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="https://www.instagram.com/tac_.co?igsh=NnFscHRlcmRqYzU3" aria-label="Instagram" class="text-gray-400 hover:text-gold transition duration-300 social-icon-wrapper interactive-element"><i class="fab fa-instagram text-2xl"></i></a>
+                        <a href="https://wa.me/919152600606" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="text-gray-400 hover:text-gold transition duration-300 social-icon-wrapper interactive-element"><i class="fab fa-whatsapp text-2xl"></i></a>
+                        <a href="https://youtube.com/@tacco-t4w?si=JCcGoXq5zML1U3Oe" aria-label="YouTube" class="text-gray-400 hover:text-gold transition duration-300 social-icon-wrapper interactive-element"><i class="fab fa-youtube text-2xl"></i></a>
+                        <a href="https://www.linkedin.com/in/tac-and-co-7021b333a/" aria-label="LinkedIn" class="text-gray-400 hover:text-gold transition duration-300 social-icon-wrapper interactive-element"><i class="fab fa-linkedin-in text-2xl"></i></a>
+                    </div>
+                </div>                                             
+                <!-- Column 2: Services -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-white mb-4">Services</h3>
+                    <ul class="space-y-2 text-sm footer-link-list">
+                        <li><a href="service-details.html?service=branding" class="interactive-element">Branding & Identity</a></li>
+                        <li><a href="service-details.html?service=seo-content-strategy" class="interactive-element">SEO & Content Strategy</a></li>
+                        <li><a href="service-details.html?service=content-creation-ugc" class="interactive-element">Content Creation & UGC</a></li>
+                        <li><a href="service-details.html?service=photography-cinematography" class="interactive-element">Photography & Cinematography</a></li>
+                        <li><a href="service-details.html?service=music-audio-production" class="interactive-element">Music & Audio</a></li>
+                        <li><a href="service-details.html?service=email-marketing" class="interactive-element">Email Marketing</a></li>
+                        <li><a href="service-details.html?service=web-app-development" class="interactive-element">Web & App Development</a></li>
+                        <li><a href="service-details.html?service=social-media-marketing" class="interactive-element">Social Media Marketing</a></li>
+                        <li><a href="service-details.html?service=ai-automation" class="interactive-element">AI Automation</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3: Useful Links -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-white mb-4">Useful Links</h3>
+                    <ul class="space-y-3 text-sm footer-link-list">
+                        <li><a href="index.html#about" class="interactive-element">About Us</a></li>
+                        <li><a href="portfolio.html" class="interactive-element">Portfolio</a></li>
+                        <li><a href="index.html#contact" class="interactive-element">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="interactive-element">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="interactive-element">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4: Contact Us -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-white mb-4">Contact Us</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt text-gold mt-1 mr-3 w-4 flex-shrink-0"></i>
+                            <span>1st Floor Room No.104 Sanjay Sadan, Kisan Nagar 02, Thane -400604</span>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-envelope text-gold mr-3 w-4 flex-shrink-0"></i>
+                            <a href="mailto:digital.tac.co@gmail.com" class="hover:text-gold transition-colors interactive-element">digital.tac.co@gmail.com</a>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start">
+                            <i class="fas fa-phone text-gold mr-3 w-4 flex-shrink-0"></i>
+                            <a href="tel:+919152600606,+919324941054" class="hover:text-gold transition-colors interactive-element">+91 91526 00606, +91 9324941054</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Footer Bottom Bar -->
+            <div class="border-t border-black pt-8 text-center text-sm text-gray-500">
+                <p>&copy; 2025 TAC & CO. All rights reserved. | <a href="privacy-policy.html" class="hover:text-gold underline transition-colors">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Mobile Menu and Portfolio Filter Scripts -->
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const openMobileNav = document.getElementById('openMobileNav');
+            const closeMobileNav = document.getElementById('closeMobileNav');
+            const mobileNav = document.getElementBy
+            
+            Id('mobileNav');
+            
+            if (openMobileNav) {
+                openMobileNav.addEventListener('click', () => {
+                    mobileNav.classList.remove('translate-x-full');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            if (closeMobileNav) {
+                closeMobileNav.addEventListener('click', () => {
+                    mobileNav.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                });
+            }
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (mobileNav && !mobileNav.contains(e.target) && !openMobileNav.contains(e.target)) {
+                    mobileNav.classList.add('translate-x-full');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Mobile services dropdown
+            window.toggleMobileServices = function() {
+                const dropdown = document.getElementById('mobileServicesDropdown');
+                dropdown.classList.toggle('hidden');
+            };
+
+            // Portfolio filtering
+            const categories = document.querySelectorAll('.portfolio-category');
+            const items = document.querySelectorAll('.portfolio-item');
+
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    const selectedCategory = this.dataset.category;
+
+                    // Update active state
+                    categories.forEach(cat => cat.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter items
+                    items.forEach(item => {
+                        if (selectedCategory === 'all' || item.dataset.category === selectedCategory) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <!-- Custom Cursor -->
+
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize particles.js
+            particlesJS("particles-js", {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#FFD700" },
+                    shape: { type: "circle" },
+                    opacity: {
+                        value: 0.5,
+                        random: false,
+                        animation: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        animation: { enable: true, speed: 2, size_min: 0.1, sync: false }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#FFD700",
+                        opacity: 0.2,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 1,
+                        direction: "none",
+                        random: true,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false,
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "grab" },
+                        onclick: { enable: true, mode: "push" },
+                        resize: true
+                    },
+                    modes: {
+                        grab: { distance: 140, line_linked: { opacity: 0.5 } },
+                        push: { particles_nb: 4 }
+                    }
+                },
+                retina_detect: true
+            });
+
+            // Ensure cursor is visible
+            const droneCursor = document.getElementById('droneCursor');
+            if (droneCursor) {
+                droneCursor.style.opacity = '1';
+            }
+
+            // Add fade-in animations
+            const sectionFadeIns = document.querySelectorAll('.section-fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sectionFadeIns.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Portfolio filtering without animations
+            const categories = document.querySelectorAll('.portfolio-category');
+            const items = document.querySelectorAll('.portfolio-item');
+
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    const selectedCategory = this.dataset.category;
+
+                    // Update active state
+                    categories.forEach(cat => cat.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter items without animation
+                    items.forEach(item => {
+                        if (selectedCategory === 'all' || item.dataset.category === selectedCategory) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+    <script src="scripts/chatbot.js"></script>
+    <script src="scripts/chatbot-drag.js"></script>
+    <script>
+        // Initialize chatbot
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initChatbot === 'function') initChatbot();
+        });
+    </script>
+</body>
+</html>

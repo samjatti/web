@@ -1,0 +1,194 @@
+/* Hero Section Animations and Styles */
+
+/* Typewriter Effect */
+.typewriter-text {
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #FFD700;
+    animation: typing 3s steps(40, end) 0.5s forwards,
+               blink-caret 0.75s step-end infinite;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.02em;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+        opacity: 1;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #FFD700 }
+}
+
+/* Enhanced Typography */
+#hero h1 {
+    font-feature-settings: "salt" on, "ss01" on;
+    letter-spacing: -0.03em;
+}
+
+/* Neon Text Effect */
+.neon-text {
+    opacity: 0;
+    color: #FFD700;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5),
+                 0 0 10px rgba(255, 215, 0, 0.5),
+                 0 0 20px rgba(255, 215, 0, 0.5);
+    animation: neon-glow 2s ease-in-out 2.5s forwards;
+}
+
+@keyframes neon-glow {
+    0% {
+        opacity: 0;
+        text-shadow: none;
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.5),
+                     0 0 10px rgba(255, 215, 0, 0.5),
+                     0 0 20px rgba(255, 215, 0, 0.5),
+                     0 0 40px rgba(255, 215, 0, 0.3);
+    }
+}
+
+/* Fade In Text Animation */
+.fade-in-text {
+    animation: fadeIn 1s ease-out 3.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Magnetic Button Effect */
+.magnetic-button {
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.magnetic-button:hover {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.magnetic-button::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, #FFD700, transparent, #FFD700);
+    border-radius: 9999px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.magnetic-button:hover::before {
+    opacity: 1;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+    z-index: 1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgba(184, 134, 11, 0.1), rgba(184, 134, 11, 0.05));
+    animation: float 20s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    bottom: -200px;
+    right: -150px;
+    animation-delay: -5s;
+}
+
+.shape-3 {
+    width: 200px;
+    height: 200px;
+    top: 40%;
+    left: 60%;
+    animation-delay: -10s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(50px, 25px) rotate(90deg);
+    }
+    50% {
+        transform: translate(25px, 50px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-25px, 25px) rotate(270deg);
+    }
+}
+
+/* Responsive Text Sizes */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+}
+
+/* CTA Buttons Hover Effects */
+.cta-button {
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+}
+
+/* Scroll Indicator Animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+/* Background Image Parallax Effect */
+.bg-fixed {
+    background-attachment: fixed;
+}
